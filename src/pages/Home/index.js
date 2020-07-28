@@ -34,7 +34,7 @@ function Home() {
         category={dadosIniciais.categorias[2]}
       />      
 
-      <Caro usel
+      <Carousel
         category={dadosIniciais.categorias[3]}
       /> 
 
