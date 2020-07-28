@@ -9,6 +9,15 @@ function CadastroCategoria(){
         <PageDefult>
             <h1>Cadastro de Categoria</h1>
 
+            <form>
+              
+              <label>
+                Nome da Categoria:
+                <input type="text" name="" value="" />
+              </label>
+
+              <button type="">Cadastrar</button>
+            </form>
             <Link to="/cadastro/categoria">
               Cadastrar Categoria
             </Link>
