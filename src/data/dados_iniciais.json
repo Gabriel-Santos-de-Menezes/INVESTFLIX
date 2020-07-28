@@ -22,6 +22,9 @@
         {
           "titulo": "6 passos para começar a investir",
           "url": "https://www.youtube.com/watch?v=H-UyKqs2qBU"
+        },{
+          "titulo": "Como eu começaria um negócio em 2020",
+          "url": "https://www.youtube.com/watch?v=FGrPACucnDU"
         }
       ]
     },
@@ -74,24 +77,24 @@
       ]
     },
     {
-      "titulo": "Músicas",
-      "cor": "orange",
+      "titulo": "Animes",
+      "cor": "#ff0065",
       "videos": [
         {
-          "titulo": "Dark",
-          "url": "https://www.youtube.com/watch?v=9RNHKKYJvg8"
+          "titulo": "Naruto",
+          "url": "https://www.youtube.com/watch?v=thh7bVCgDHs"
         },
         {
-          "titulo": "Black Mirror",
-          "url": "https://www.youtube.com/watch?v=jDiYGjp5iFg"
+          "titulo": "My Hero Academy",
+          "url": "https://www.youtube.com/watch?v=wIb3nnOeves"
         },
         {
-          "titulo": "Stanger Things",
-          "url": "https://www.youtube.com/watch?v=R1ZXOOLMJ8s"
+          "titulo": "Black Clover",
+          "url": "https://www.youtube.com/watch?v=MH4pWlX4LqI"
         },
         {
-          "titulo": "The Witcher",
-          "url": "https://www.youtube.com/watch?v=tjujvMkqWe4"
+          "titulo": "One Puch Man",
+          "url": "https://www.youtube.com/watch?v=2JAElThbKrI"
         }
       ]
     },
@@ -100,20 +103,20 @@
       "cor": "#8A2BE2",
       "videos": [
         {
-          "titulo": "Dark",
-          "url": "https://www.youtube.com/watch?v=9RNHKKYJvg8"
+          "titulo": "Imagine Dragons - Believer",
+          "url": "https://www.youtube.com/watch?v=7wtfhZwyrcc"
         },
         {
-          "titulo": "Black Mirror",
-          "url": "https://www.youtube.com/watch?v=jDiYGjp5iFg"
+          "titulo": "Sweet Child O' Mine",
+          "url": "https://www.youtube.com/watch?v=1w7OgIMMRc4"
         },
         {
-          "titulo": "Stanger Things",
-          "url": "https://www.youtube.com/watch?v=R1ZXOOLMJ8s"
+          "titulo": "In the end",
+          "url": "https://www.youtube.com/watch?v=otNN8A4rtI0"
         },
         {
-          "titulo": "The Witcher",
-          "url": "https://www.youtube.com/watch?v=tjujvMkqWe4"
+          "titulo": "Imagine Dragons - Natural",
+          "url": "https://youtu.be/0I647GU3Jsc?list=RD7wtfhZwyrcc"
         }
       ]
     }
