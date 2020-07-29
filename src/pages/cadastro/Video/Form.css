@@ -1,0 +1,13 @@
+.Buttons{
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.ButtonSalvar{
+    background-color: var(--primary);
+    margin-right: 20px;
+}
+
+.ButtonLimpar{
+    background-color: var(--blackLighter);
+}
