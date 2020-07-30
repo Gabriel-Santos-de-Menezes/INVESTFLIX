@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 
 import PageDefault from '../../../components/PageDefult';
@@ -10,14 +10,19 @@ import './Form.css'
 function useFormik({
   initialValues
 }){
-  console.log(initialValues);
+  const [values, setValues] = useState(initialValues);
 
-  function handleChange(){
-
+  function handleChange(event){
+    const fieldName = event.target.getAttribute('name');
+    const value = event.target.value;
+    setValues({
+      ...values,
+      [fieldName]: value, 
+    })
   }
 
   return{
-    values: initialValues,
+    values,
     handleChange
   }
 }
@@ -25,11 +30,11 @@ function useFormik({
 function CadastroVideo() {
   const formik = useFormik({
     initialValues:{
-      titulo: 'Eu sou Gabriel',
-      link: 'google.com',
-      linkImg: 'google.com',
-      descricao: 'Ola',
-      codigo: 2501
+      titulo: '',
+      link: '',
+      linkImg: '',
+      descricao: '',
+      codigo: ''
   
     }
   })
@@ -42,7 +47,7 @@ function CadastroVideo() {
         Cadastrar Categoria
       </Link>
 
-      <form>
+      <form >
         <div className="formField">  
           <Input type="text" placeholder="Titulo" name="titulo" value={formik.values.titulo} onChange={formik.handleChange} />
         </div>
