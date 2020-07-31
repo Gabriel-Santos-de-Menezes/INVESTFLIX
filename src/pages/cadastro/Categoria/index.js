@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PageDefult from '../../../components/PageDefult';
@@ -33,7 +34,9 @@ function CadastroCategoria() {
   useEffect(() => {
     console.log('alo alo');
 
-    const URL_TOP = 'http://localhost:8080/categorias';
+    const URL_TOP = window.location.hostname.includes('localhost')
+      ? 'https://localhost:3000/categorias'
+      : 'https://gaflix.herokuapp.com/categorias';
     fetch(URL_TOP)
       .then(async (respostaDoServidor) => {
         const resposta = await respostaDoServidor.json();
