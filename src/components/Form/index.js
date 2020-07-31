@@ -12,6 +12,7 @@ const Input  = styled.input`
     border-radius: 4px;
     &:focus{
         border-bottom: 3px solid red;
+        padding-bottom: -4px;
     }
 
 `;
