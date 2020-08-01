@@ -1,95 +1,86 @@
-import React, {useState} from 'react';
-import { Link } from 'react-router-dom';
-
+import React, { useEffect, useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import PageDefault from '../../../components/PageDefult';
-import {Input, Select, Textarea} from '../../../components/Form'
-import Button from '../../../components/Button'
-
-import './Form.css'
-
-function useFormik({
-  initialValues
-}){
-  const [values, setValues] = useState(initialValues);
-
-  function handleChange(event){
-    const fieldName = event.target.getAttribute('name');
-    const value = event.target.value;
-    setValues({
-      ...values,
-      [fieldName]: value, 
-    })
-  }
-
-  return{
-    values,
-    handleChange
-  }
-}
+import Button from '../../../components/Button';
+import useForm from '../../../hooks/useForme';
+import FormField from '../../../components/FormField';
+import videosRepository from '../../../reposirories/videos';
+import categoriasRepository from '../../../reposirories/categorias';
 
 function CadastroVideo() {
-  const formik = useFormik({
-    initialValues:{
-      titulo: '',
-      link: '',
-      linkImg: '',
-      descricao: '',
-      codigo: ''
-  
-    }
-  })
+  const history = useHistory();
+  const [categorias, setCategorias] = useState([]);
+  const categoryTitles = categorias.map(({ titulo }) => titulo);
+  const { handleChange, values } = useForm({
+    titulo: 'AS 4 ESTRATÉGIAS PRA SAIR DE UM SALÁRIO MÍNIMO PARA O PRIMEIRO MILHÃO',
+    url: 'https://youtu.be/ojigXhpEgNM',
+    categorias: 'Finanças',
+  });
+
+  useEffect(() => {
+    categoriasRepository
+      .getAll()
+      .then((categoriasFromServer) => {
+        setCategorias(categoriasFromServer);
+      });
+  }, []);
 
   return (
     <PageDefault>
       <h1>Novo Vídeo</h1>
 
+      <form onSubmit={(event) =>{
+        event.preventDefault();
+
+        const categoriaEscolhida = categorias.find((categoria) => {
+          return categoria.titulo === values.categoria;
+        });
+
+        console.log('Categoria escolhida', categoriaEscolhida);
+
+        videosRepository.create({
+          titulo: values.titulo,
+          url: values.url,
+          categoriaId: 1,
+        })
+          .then(() => {
+            console.log('Cadastrou com sucesso!');
+            // Colocar um poup para falar que teve sucesso
+            history.push('/');
+          });
+      }}
+      >
+
+        <FormField
+          label="Título do Vídeo"
+          name="titulo"
+          value={values.titulo}
+          onChange={handleChange}
+        />
+
+        <FormField
+          label="URL"
+          name="url"
+          value={values.url}
+          onChange={handleChange}
+        />
+
+        <FormField
+          label="Categoria"
+          name="categorias"
+          value={values.categorias}
+          onChange={handleChange}
+          suggestions={categoryTitles}
+        />
+
+        <Button type="submit">Cadastrar</Button>
+
+      </form>
       <Link to="/cadastro/categoria">
         Cadastrar Categoria
       </Link>
-
-      <form >
-        <div className="formField">  
-          <Input type="text" placeholder="Titulo" name="titulo" value={formik.values.titulo} onChange={formik.handleChange} />
-        </div>
-
-        <div className="formField">  
-          <Input type="text" placeholder="Link do vídeo" name="link" value={formik.values.link} onChange={formik.handleChange}/>
-        </div>
-
-        <div className="formField">  
-          <Input type="text" name="linkImg" placeholder="Link da imagem do vídeo" value={formik.values.linkImg} onChange={formik.handleChange}/>
-        </div>
-
-        <div className="formField">  
-          <Select>
-            <option>Escolha uma categoria</option>
-            <option value="...">...</option>
-          </Select>
-        </div>
-
-        <div className="formField">  
-          <Textarea rows="" cols="" value={formik.values.descricao} onChange={formik.handleChange} name="descricao" placeholder="Descrição"></Textarea>
-        </div>
-
-        <div className="formField">  
-          <Input type="text" name="codigo" placeholder="Código de segurança" value={formik.values.codigo} onChange={formik.handleChange} />
-        </div>
-
-        <div className="Buttons">
-          <Button className="ButtonSalvar">
-            Salvar
-          </Button>
-
-          <Button className="ButtonLimpar">
-            Limpar
-          </Button>
-        </div>
-        
-
-
-      </form>
     </PageDefault>
-  )
+  );
 }
 
-export default CadastroVideo; 
+export default CadastroVideo;
