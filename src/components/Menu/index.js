@@ -9,9 +9,9 @@ function Menu() {
   return (
 
     <nav className="Menu">
-      <a as={Link} to="/">
+      <Link to="/">
         <img className="Logo" src={Logo} alt="gaflix Logo" />
-      </a>
+      </Link>
 
       <Button as={Link} className="ButtonLink" to="/cadastro/video">
         Novo vídeo
