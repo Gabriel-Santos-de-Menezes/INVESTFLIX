@@ -17,7 +17,6 @@ ReactDOM.render(
       <Route path="/cadastro/video" component={cadastroVideo} />
       <Route path="/cadastro/categoria" component={cadastroCategoria} />
       <Route component={Pagina404} />
-      {' '}
       {/* pÁGINA 404 */}
 
     </Switch>

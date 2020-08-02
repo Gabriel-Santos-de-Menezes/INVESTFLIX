@@ -4,6 +4,7 @@ import styled, { css } from "styled-components";
 
 const FormFieldWrapper = styled.div`
   position: relative;
+  width: 100%;
   textarea {
     min-height: 150px;
   }
@@ -51,9 +52,12 @@ const Input = styled.input`
   resize: none;
   border-radius: 4px;
   transition: border-color 0.3s;
+  &:not([type="text"]){
+    padding: 0;
+  }
 
   &:focus {
-    border-bottom-color: red;
+    border-bottom-color: #008000;
   }
   /*//////Verifica se o input tem algum valor digitado///////*/
   &:focus:not([type="color"]) + ${Label.Text} {
