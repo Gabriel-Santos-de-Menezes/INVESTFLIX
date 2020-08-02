@@ -12,9 +12,9 @@ function CadastroVideo() {
   const [categorias, setCategorias] = useState([]);
   const categoryTitles = categorias.map(({ titulo }) => titulo);
   const { handleChange, values } = useForm({
-    titulo: 'AS 4 ESTRATÉGIAS PRA SAIR DE UM SALÁRIO MÍNIMO PARA O PRIMEIRO MILHÃO',
-    url: 'https://youtu.be/ojigXhpEgNM',
-    categorias: 'Finanças',
+    titulo: '',
+    url: '',
+    categorias: '',
   });
 
   useEffect(() => {

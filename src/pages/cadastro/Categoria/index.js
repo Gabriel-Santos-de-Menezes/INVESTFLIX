@@ -30,28 +30,6 @@ function CadastroCategoria() {
           ...resposta,
         ]);
       });
-
-    /* setTimeout(() => {
-      setCategorias([
-        ...categorias, // pegando todas as informações que já tinhha
-        {
-          categorias: [
-            {
-              id: 1,
-              nome: 'Front End',
-              descricao: 'Uma categoria show',
-              cor: '#cbd1ff',
-            },
-            {
-              id: 2,
-              nome: 'Back End',
-              descricao: 'Uma categoria legal',
-              cor: '#cbd1ff',
-            },
-          ],
-        }, // pegando todas as informações que já tinhha
-      ]);
-    }, 4 * 1000); */
   }, []);
 
   return (
