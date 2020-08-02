@@ -9,7 +9,7 @@ function Menu() {
   return (
 
     <nav className="Menu">
-      <a to="">
+      <a as={Link} to="/">
         <img className="Logo" src={Logo} alt="gaflix Logo" />
       </a>
 
@@ -20,13 +20,3 @@ function Menu() {
   );
 }
 export default Menu;
-
-{ /* <MenuWrapper className="Menu">
-    <a href="/">
-        <LogoImage src={{Logo}} alt="gaflix Logo"/>
-    </a>
-
-    <Button as="a" className="ButtonLink" href="/">
-        Novo vídeo
-    </Button>
-</MenuWrapper> */ }

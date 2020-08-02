@@ -1,7 +1,7 @@
 import React from 'react';
 import { FooterBase } from './styles';
-import Logo from '../../assets/img/gaflix.png'
-import './Footer.css'
+import Logo from '../../assets/img/gaflix.png';
+import './Footer.css';
 
 function Footer() {
   return (
