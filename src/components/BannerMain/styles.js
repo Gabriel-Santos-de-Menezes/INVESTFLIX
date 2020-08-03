@@ -10,7 +10,7 @@ export const ContentAreaContainer = styled.section`
   position: relative;
   z-index: 10;
   @media (max-width: 800px) {
-    padding-top: 100px;
+    padding-top: 25px;
     flex-direction: column;
   }
 `;
@@ -39,7 +39,7 @@ ContentAreaContainer.Category = styled.h1`
   border-radius: 4px;
 
   @media (max-width: 800px) {
-    display: none;
+    display: inline-block;
     font-size: 18px;
     padding: 10px;
   }
@@ -62,6 +62,7 @@ ContentAreaContainer.Title = styled.h2`
   @media (max-width: 800px) {
     font-size: 32px;
     text-align: center;
+    margin-bottom: 0;
   }
 `;
 
@@ -100,26 +101,3 @@ export const BannerMainContainer = styled.section`
   }
 `;
 
-export const WatchButton = styled.button`
-  font-family: 'Roboto', sans-serif;
-  box-sizing: border-box;
-  cursor: pointer;
-  padding: 16px 24px;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 16px;
-  outline: none;
-  border-radius: 5px;
-  text-decoration: none;
-  display: inline-block;
-  border: 1px solid transparent;
-  color: var(--black);
-  background: var(--white);
-  border-color: var(--black);
-  transition: opacity .3s;
-  display: none;
-  margin: 0 auto;
-  @media (max-width: 800px) {
-    display: block;
-  }
-`;
