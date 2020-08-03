@@ -3,27 +3,32 @@
     {
       "id": 1,
       "titulo": "O Primo Rico",
-      "cor": "#008000"
+      "cor": "#008000",
+      "descricao": "Canal do Primo rico"
     },
     {
       "id": 2,
       "titulo": "Me poupe!",
-      "cor": "orange"
+      "cor": "orange",
+      "descricao": "Canal da Nath"
     },
     {
       "id": 3,
       "titulo": "Jovens de Negócios",
-      "cor": "red"
+      "cor": "red",
+      "descricao": "Canal do Jovens de Negócios"
     },
     {
       "id": 4,
       "titulo": "Tiago Fonseca",
-      "cor": "#ff0065"
+      "cor": "#ff0065",
+      "descricao": "Canal do Tiago Fonseca"
     },
     {
       "id": 5,
       "titulo": "Programador Br",
-      "cor": "#8A2BE2"
+      "cor": "#8A2BE2",
+      "descricao": "Canal do Programador Br"
     }
   ],
   "videos": [

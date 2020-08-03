@@ -67,7 +67,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: var(--primary);
+    background: #008000;
     border-radius: 0;
     border: 0;
     text-align: center;
