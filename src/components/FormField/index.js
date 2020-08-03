@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled, { css } from "styled-components";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled, { css } from 'styled-components';
 
 const FormFieldWrapper = styled.div`
   position: relative;
@@ -52,7 +52,7 @@ const Input = styled.input`
   resize: none;
   border-radius: 4px;
   transition: border-color 0.3s;
-  &:not([type="text"]){
+  &:not([type="text"]+ [tag="textarea"]){
     padding: 0;
   }
 
@@ -67,8 +67,8 @@ const Input = styled.input`
   ${({ value }) => {
     const hasValue = value.length > 0;
     return (
-      hasValue &&
-      css`
+      hasValue
+      && css`
         &:not([type="color"]) + ${Label.Text} {
           transform: scale(0.6) translateY(-10px);
         }
@@ -77,10 +77,12 @@ const Input = styled.input`
   }}
 `;
 
-function FormField({ label, type, name, value, onChange, suggestions }) {
-  const fieldId = "id_${name}";
-  const isTextarea = type === "textarea";
-  const tag = isTextarea ? "textarea" : "input";
+function FormField({
+  label, type, name, value, onChange, suggestions,
+}) {
+  const fieldId = `id_${name}`;
+  const isTypeTextarea = type === 'textarea';
+  const tag = isTypeTextarea ? 'textarea' : 'input';
 
   // pega número de caractres no input
   const hasValue = Boolean(value.length);
@@ -100,11 +102,16 @@ function FormField({ label, type, name, value, onChange, suggestions }) {
           autoComplete={hasSuggestions ? 'off' : 'on'}
           list={hasSuggestions ? `suggestionFor_${fieldId}` : undefined}
         />
-        <Label.Text>{label}:</Label.Text>
+        <Label.Text>
+          {label}
+          :
+        </Label.Text>
         {hasSuggestions && (
           <datalist id={`suggestionFor_${fieldId}`}>
             {suggestions.map((suggestion) => (
-              <option value="suggestion" key={ `suggestionFor${fieldId}_option${suggestion}` } >{suggestion}</option>
+              <option value={suggestion} key={`suggestionFor_${fieldId}_option${suggestion}`}>
+                {suggestion}
+              </option>
             ))}
           </datalist>
         )}
@@ -114,8 +121,8 @@ function FormField({ label, type, name, value, onChange, suggestions }) {
 }
 
 FormField.defaultProps = {
-  type: "text",
-  value: "",
+  type: 'text',
+  value: '',
   onChange: () => {},
   suggestions: [],
 };

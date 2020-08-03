@@ -22,7 +22,7 @@ function Home() {
   }, []);
 
   return (
-    <PageDefault paddingAll={0}>
+    <PageDefault link="/cadastro/video" paddingAll={0}>
 
       {dadosIniciais.lengh === 0 && <div>Loading...</div>}
 

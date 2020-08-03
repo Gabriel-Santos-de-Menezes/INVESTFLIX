@@ -14,7 +14,7 @@ function CadastroVideo() {
   const { handleChange, values } = useForm({
     titulo: '',
     url: '',
-    categorias: '',
+    categoria: '',
   });
 
   useEffect(() => {
@@ -26,31 +26,29 @@ function CadastroVideo() {
   }, []);
 
   return (
-    <PageDefault>
+    <PageDefault link="/cadastro/categoria">
       <h1>Novo Vídeo</h1>
+      <form
+        onSubmit={(event) => {
+          event.preventDefault();
 
-      <form onSubmit={(event) =>{
-        event.preventDefault();
-
-        const categoriaEscolhida = categorias.find((categoria) => {
-          return categoria.titulo === values.categoria;
-        });
-
-        console.log('Categoria escolhida', categoriaEscolhida);
-
-        videosRepository.create({
-          titulo: values.titulo,
-          url: values.url,
-          categoriaId: 1,
-        })
-          .then(() => {
-            console.log('Cadastrou com sucesso!');
-            // Colocar um poup para falar que teve sucesso
-            history.push('/');
+          const categoriaEscolhida = categorias.find((categoria) => {
+            console.log(values);
+            return categoria.titulo === values.categoria;
           });
-      }}
-      >
+          console.log('Categoria escolhida', categoriaEscolhida);
 
+          videosRepository.create({
+            titulo: values.titulo,
+            url: values.url,
+            categoriaId: categoriaEscolhida.id,
+          })
+            .then(() => {
+              console.log('Cadastrou com sucesso!');
+              history.push('/');
+            });
+        }}
+      >
         <FormField
           label="Título do Vídeo"
           name="titulo"
@@ -67,18 +65,14 @@ function CadastroVideo() {
 
         <FormField
           label="Categoria"
-          name="categorias"
-          value={values.categorias}
+          name="categoria"
+          value={values.categoria}
           onChange={handleChange}
           suggestions={categoryTitles}
         />
 
         <Button type="submit">Cadastrar</Button>
-
       </form>
-      <Link to="/cadastro/categoria">
-        Cadastrar Categoria
-      </Link>
     </PageDefault>
   );
 }

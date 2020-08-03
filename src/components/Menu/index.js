@@ -5,7 +5,11 @@ import './Menu.css';
 import Button from '../Button';
 // import ButtonLink from './components/ButtonLink';
 
-function Menu() {
+function Menu({ link }) {
+  let nameButton = "Novo video";
+  if (link == '/cadastro/categoria') {
+    nameButton = "Nova categoria";
+  } else nameButton = "Novo video";
   return (
 
     <nav className="Menu">
@@ -13,8 +17,8 @@ function Menu() {
         <img className="Logo" src={Logo} alt="gaflix Logo" />
       </Link>
 
-      <Button as={Link} className="ButtonLink" to="/cadastro/video">
-        Novo vídeo
+      <Button as={Link} className="ButtonLink" to={link}>
+        {nameButton}
       </Button>
     </nav>
   );

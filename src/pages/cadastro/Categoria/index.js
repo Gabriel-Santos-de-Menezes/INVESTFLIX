@@ -33,7 +33,7 @@ function CadastroCategoria() {
   }, []);
 
   return (
-    <PageDefult>
+    <PageDefult link="/cadastro/video">
       <h1>
         Cadastro de Categoria:
         {values.nome}
@@ -79,8 +79,6 @@ function CadastroCategoria() {
 
         {categorias.length === 0 && <div>Loading...</div>}
       </div>
-
-      <Link to="/cadastro/categoria">Cadastrar Categoria</Link>
       {/* <table>
         <tr>
           <th>Nome</th>

@@ -30,7 +30,7 @@
     {
       "id": 1,
       "categoriaId": 1,
-      "titulo": "O gui básico para começar a investir",
+      "titulo": "O guia básico para começar a investir",
       "url": "https://www.youtube.com/watch?v=dJyJ77GkhBE"
     },
     {
@@ -158,6 +158,18 @@
       "categoriaId": 5,
       "titulo": "Quando dá para ganhar com o Adsense",
       "url": "https://www.youtube.com/watch?v=8D1tmg-n4yQ"
+    },
+    {
+      "titulo": "3 SEGREDOS DA MENTE UNIVERSITÁRIA MILIONÁRIA",
+      "url": "https://youtu.be/MziFPb2SbUc",
+      "categoriaId": 2,
+      "id": 23
+    },
+    {
+      "titulo": "SQIA3: Sinqia",
+      "url": "https://www.youtube.com/watch?v=UzKYOeiYAHA",
+      "categoriaId": 1,
+      "id": 24
     }
   ]
 }

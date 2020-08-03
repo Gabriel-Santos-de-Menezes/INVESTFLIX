@@ -15,10 +15,10 @@ const Main = styled.main`
   `}
 `;
 
-function PageDefault({ children, paddingAll }) {
+function PageDefault({ children, paddingAll, link }) {
   return (
     <>
-      <Menu />
+      <Menu link={link} />
       <Main paddingAll={paddingAll}>
         {children}
       </Main>
