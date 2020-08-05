@@ -1,5 +1,5 @@
 
-![](https://github.com/Gabriel-Santos-de-Menezes/INVESTFLIX/blob/master/src/assets/img/gaflix.png)
+<p align="center"><img src="https://github.com/Gabriel-Santos-de-Menezes/INVESTFLIX/blob/master/src/assets/img/gaflix.png" alt="Gabriel"></p>
 <p>O INVESTFLIX é um projeto criado durante a irmesão alura. Ele abrange os canais do Youtube sobre finanças e empreendedorismo que acompanho, sendo possível ainda, cadastrar novas categorias e novos vídeos.</p>
 
 ### :computer: Tecnologias utilizadas
